@@ -4,16 +4,15 @@ class Solution {
             return false;
         }
 
-        int[] count = new int[26];
-        
-        for (int i = 0; i < s.length(); i++) {
-            count[s.charAt(i) - 'a']++; 
-            count[t.charAt(i) - 'a']--;
-        } //If the strings are anagrams, every +1 from string s will be perfectly canceled out by a -1 from string t.
+        int[] c= new int[26];
 
+        for(int i=0; i<s.length(); i++){
+            c[s.charAt(i)-'a']++;
+            c[t.charAt(i)-'a']--;
+        }
 
-        for (int i = 0; i < 26; i++) {
-            if (count[i] != 0) {
+        for(int i=0; i<c.length; i++){
+            if(c[i] !=0){
                 return false;
             }
         }
